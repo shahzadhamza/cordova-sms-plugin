@@ -22,16 +22,14 @@ sms.send = function(phone, message, options, success, failure) {
     // parsing options
     var replaceLineBreaks = false;
     var androidIntent = '';
-    var androidSlot = '';
     if (typeof options === 'string') { // ensuring backward compatibility
         window.console.warn('[DEPRECATED] Passing a string as a third argument is deprecated. Please refer to the documentation to pass the right parameter: https://github.com/cordova-sms/cordova-sms-plugin.');
         androidIntent = options;
-        androidSlot = 0;
-    } else if (typeof options === 'object') {
+    }
+    else if (typeof options === 'object') {
         replaceLineBreaks = options.replaceLineBreaks || false;
         if (options.android && typeof options.android === 'object') {
             androidIntent = options.android.intent;
-            androidSlot = options.android.slot;
         }
     }
 
@@ -40,7 +38,7 @@ sms.send = function(phone, message, options, success, failure) {
         success,
         failure,
         'Sms',
-        'send', [phone, message, androidIntent, replaceLineBreaks, androidSlot]
+        'send', [phone, message, androidIntent, replaceLineBreaks]
     );
 };
 
