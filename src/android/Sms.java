@@ -1,14 +1,17 @@
 package com.cordova.plugins.sms;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Build.VERSION;
+import android.provider.Telephony;
 import android.telephony.SmsManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
